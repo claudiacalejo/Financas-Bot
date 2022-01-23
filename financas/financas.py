@@ -4,7 +4,7 @@ from selenium import webdriver
 
 
 class WebScrapper(webdriver.Chrome):
-    def __init__(self, driver_path = r"D:\SeleniumDrivers", teardown = False):
+    def __init__(self, driver_path = r"D:\SeleniumDrivers", teardown = False): #you may have to change the path of the selenium drivers
         self.driver_path = driver_path
         self.teardown = teardown
         os.environ['PATH'] += self.driver_path
