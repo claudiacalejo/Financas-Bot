@@ -87,8 +87,10 @@ class WebScrapper(webdriver.Chrome):
     def emitir_recibo(self):
         aceitar_dados = input("Aceita emitir o recibo? ")
         if aceitar_dados == "Sim" or aceitar_dados == "sim":
-            emitir_btn = self.find_element_by_class_name('btn-success')
+            emitir_btn = self.find_element_by_xpath('//*[@id="ng-app"]/div[2]/div/div[1]/div[2]/button')
             emitir_btn.click()
+            emitir_btn_confirmar = self.find_element_by_xpath('//*[@id="modalEmitirRecibo"]/div/div/div[3]/button[2]')
+            emitir_btn_confirmar.click()
             print( " --- RECIBO EMITIDO ---")
         else:
             print(" --- RECIBO NÃO EMITIDO --- ")
